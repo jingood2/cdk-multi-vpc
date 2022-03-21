@@ -1,4 +1,5 @@
 //import * as chalk from 'chalk';
+import * as ec2 from 'aws-cdk-lib/aws-ec2';
 
 export const envVars = {
   COMPANY_NAME: 'skcnc',
@@ -16,9 +17,34 @@ export const envVars = {
   SHARED_VPC_CIDR_BLOCK: '192.168.0.0/18',
   ONPREMISE_CIDR_BOCK: '192.168.0.0/18',
   VPC_ENV_INFO: [
-    { DMZ: { VPC_CIDR_BLOCK: '10.0.0.0/18', TGW_ROUTE: ['10.1.0.0/18'] } },
-    { DEV: { VPC_CIDR_BLOCK: '10.1.0.0/18', TGW_ROUTE: ['0.0.0.0/0'] } },
-    { SHARED: { VPC_CIDR_BLOCK: '192.168.0.0/18', TGW_ROUTE: ['0.0.0.0/0'] } },
+    {
+      STAGE: 'dmz',
+      NGW: 2,
+      VPC_CIDR_BLOCK: '10.0.0.0/18',
+      TGW_ROUTE: ['10.1.0.0/18'],
+      SUBNET_CONFIG: [
+        { name: 'pub', subnetType: ec2.SubnetType.PUBLIC, cidrMask: 28 },
+        { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_WITH_NAT, cidrMask: 24 },
+      ],
+    },
+    {
+      STAGE: 'dev',
+      NGW: 0,
+      VPC_CIDR_BLOCK: '10.1.0.0/18',
+      TGW_ROUTE: ['0.0.0.0/0'],
+      SUBNET_CONFIG: [
+        { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_ISOLATED, cidrMask: 22 },
+      ],
+    },
+    {
+      STAGE: 'shared',
+      NGW: 0,
+      VPC_CIDR_BLOCK: '192.168.0.0/18',
+      TGW_ROUTE: ['0.0.0.0/0'],
+      SUBNET_CONFIG: [
+        { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_ISOLATED, cidrMask: 22 },
+      ],
+    },
   ],
   CGW_PUBLIC_IP: '11.23.22.0/32',
   BRANCH: 'develop',

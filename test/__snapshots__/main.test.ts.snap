@@ -10,7 +10,26 @@ Object {
     },
   },
   "Resources": Object {
-    "DevVpcNestedStackDevVpcNestedStackResource7478DE5D": Object {
+    "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "TemplateURL": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "https://s3.ap-northeast-2.",
+              Object {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/072d985dbe7c88448fca3f4b2ef4dc255a54b7ab7cdde31f2ef20a4b918fbb18.json",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "devVPCNestedStackdevVPCNestedStackResourceB9EA84ED": Object {
       "DeletionPolicy": "Delete",
       "DependsOn": Array [
         "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A",
@@ -50,7 +69,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/f92c1442c6d1ea62635daee6490d19bb5a41c55a0580f86eb9a4db0b96632dfa.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/43e2e928ed7c3a35ea21e7633fe2a5119621d1373ccfabab8ff62ed1fcdb978f.json",
             ],
           ],
         },
@@ -58,7 +77,7 @@ Object {
       "Type": "AWS::CloudFormation::Stack",
       "UpdateReplacePolicy": "Delete",
     },
-    "DmzVPCNestedStackDmzVPCNestedStackResource6D61C35C": Object {
+    "dmzVPCNestedStackdmzVPCNestedStackResourceEA3176A0": Object {
       "DeletionPolicy": "Delete",
       "DependsOn": Array [
         "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A",
@@ -98,7 +117,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/25331edf212a1573e0bbac7b90d4ac112fdb5dca2f09853edbc608b04969c600.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/9ea7778ba96d61f4d5dc9381698f9c2989946e308ec2b32a8568a2f929946fed.json",
             ],
           ],
         },
@@ -106,7 +125,7 @@ Object {
       "Type": "AWS::CloudFormation::Stack",
       "UpdateReplacePolicy": "Delete",
     },
-    "SharedVpcNestedStackSharedVpcNestedStackResource28D5D41B": Object {
+    "sharedVPCNestedStacksharedVPCNestedStackResourceCBD4FBE9": Object {
       "DeletionPolicy": "Delete",
       "DependsOn": Array [
         "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A",
@@ -146,26 +165,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/626dc0a57ce1c786e0f8061b920b2a02e08e21b4f16becdce3cbdbd03a2ae584.json",
-            ],
-          ],
-        },
-      },
-      "Type": "AWS::CloudFormation::Stack",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A": Object {
-      "DeletionPolicy": "Delete",
-      "Properties": Object {
-        "TemplateURL": Object {
-          "Fn::Join": Array [
-            "",
-            Array [
-              "https://s3.ap-northeast-2.",
-              Object {
-                "Ref": "AWS::URLSuffix",
-              },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/072d985dbe7c88448fca3f4b2ef4dc255a54b7ab7cdde31f2ef20a4b918fbb18.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/ceb49e7ad47f6076caf37ea7e9e92785a8c40e3a766918033dc6e68e388a9041.json",
             ],
           ],
         },

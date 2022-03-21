@@ -117,6 +117,8 @@ export class VpcConstruct extends cdk.NestedStack {
             cidrBlock: `100.26.${idx * 4}.0/22`,
           });
 
+          cdk.Tags.of(localZoneSubnet).add('Name', `${props.customProps.project}-${props.customProps.stage}-zcp-${String(idx+1).padStart(2, '0')}`);
+
           localZoneSubnet.node.addDependency(cidr);
 
           new ec2.CfnRoute(this, `Route-${localZoneSubnet.availabilityZone}`, {

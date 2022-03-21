@@ -1,5 +1,5 @@
 import { App, Stack, StackProps } from 'aws-cdk-lib';
-import * as ec2 from 'aws-cdk-lib/aws-ec2';
+//import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { Construct } from 'constructs';
 import { envVars, validateEnvVariables } from './config';
 import { TgwConstruct } from './lib/tgw-construct';
@@ -15,18 +15,40 @@ export class MyStack extends Stack {
 
     // define resources here...
     // 1. VPC
-    new VpcConstruct(this, 'DmzVPC', {
+    envVars.VPC_ENV_INFO.forEach((vpc) => {
+      new VpcConstruct(this, `${vpc.STAGE}-VPC`, {
+        //env: props.env,
+        //env: { account: '037729278610', region: 'ap-northeast-2' },
+        customProps: {
+          company: `${envVars.COMPANY_NAME}`,
+          project: `${envVars.PROJECT_NAME}`,
+          stage: vpc.STAGE,
+          tgwCidrBlock: vpc.TGW_ROUTE,
+          useNATInstance: true,
+        },
+        vpcProps: {
+          cidr: vpc.VPC_CIDR_BLOCK,
+          enableDnsHostnames: true,
+          enableDnsSupport: true,
+          natGateways: vpc.NGW,
+          maxAzs: 2,
+          subnetConfiguration: vpc.SUBNET_CONFIG,
+        },
+      }).addDependency(tgwStack);
+
+    });
+    /* new VpcConstruct(this, 'DmzVPC', {
       //env: props.env,
       //env: { account: '037729278610', region: 'ap-northeast-2' },
       customProps: {
         company: `${envVars.COMPANY_NAME}`,
         project: `${envVars.PROJECT_NAME}`,
         stage: 'dmz',
-        tgwCidrBlock: ['10.1.0.0/18'],
+        tgwCidrBlock: envVars.VPC_ENV_INFO.DMZ.TGW_ROUTE,
         useNATInstance: true,
       },
       vpcProps: {
-        cidr: envVars.DMZ_VPC_CIDR_BLOCK,
+        cidr: envVars.VPC_ENV_INFO.DMZ.VPC_CIDR_BLOCK,
         enableDnsHostnames: true,
         enableDnsSupport: true,
         natGateways: 1,
@@ -82,7 +104,7 @@ export class MyStack extends Stack {
           { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_ISOLATED, cidrMask: 22 },
         ],
       },
-    }).addDependency(tgwStack);
+    }).addDependency(tgwStack); */
 
     if (envVars.ENABLE_VPN_USE == 'true') {
       new VpnConstruct(this, 'OnPremA', {
