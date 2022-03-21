@@ -69,7 +69,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/43e2e928ed7c3a35ea21e7633fe2a5119621d1373ccfabab8ff62ed1fcdb978f.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/58c544efc31e9bdf1741b98e3c01a20e0e1b376b28ff3d1adbbb4fe42b4da5a4.json",
             ],
           ],
         },
@@ -117,7 +117,55 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/9ea7778ba96d61f4d5dc9381698f9c2989946e308ec2b32a8568a2f929946fed.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/6bc7db0f91ba7b10a3412c49ee6e91ceea2c08f0bef0b402899b69e76c606cac.json",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::CloudFormation::Stack",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "prodVPCNestedStackprodVPCNestedStackResourceE39F00DE": Object {
+      "DeletionPolicy": "Delete",
+      "DependsOn": Array [
+        "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A",
+      ],
+      "Properties": Object {
+        "Tags": Array [
+          Object {
+            "Key": "cz-ext1",
+            "Value": " ",
+          },
+          Object {
+            "Key": "cz-ext2",
+            "Value": " ",
+          },
+          Object {
+            "Key": "cz-ext3",
+            "Value": " ",
+          },
+          Object {
+            "Key": "cz-org",
+            "Value": "skcnc",
+          },
+          Object {
+            "Key": "cz-project",
+            "Value": "network",
+          },
+          Object {
+            "Key": "cz-stage",
+            "Value": "prod",
+          },
+        ],
+        "TemplateURL": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "https://s3.ap-northeast-2.",
+              Object {
+                "Ref": "AWS::URLSuffix",
+              },
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/55f172eb0dad53412ece4cfcc7546639b15ecd4433e631c943875f61e028f84c.json",
             ],
           ],
         },
@@ -165,7 +213,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/ceb49e7ad47f6076caf37ea7e9e92785a8c40e3a766918033dc6e68e388a9041.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/d44a8c00a4e2c0c1bf9e51817c336d592e192fb5f2c79377f9f0efd37af0bf81.json",
             ],
           ],
         },

@@ -16,12 +16,13 @@ export const envVars = {
   PROD_VPC_CIDR_BLOCK: '10.2.0.0/18',
   SHARED_VPC_CIDR_BLOCK: '192.168.0.0/18',
   ONPREMISE_CIDR_BOCK: '192.168.0.0/18',
+  INTERFACE_VPC_ENDPOINT_SERVICE: ['ecr.dkr', 's3', 'sqs'],
   VPC_ENV_INFO: [
     {
       STAGE: 'dmz',
       NGW: 2,
       VPC_CIDR_BLOCK: '10.0.0.0/18',
-      TGW_ROUTE: ['10.1.0.0/18'],
+      TGW_ROUTE: ['10.1.0.0/18', '10.2.0.0/18'],
       SUBNET_CONFIG: [
         { name: 'pub', subnetType: ec2.SubnetType.PUBLIC, cidrMask: 28 },
         { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_WITH_NAT, cidrMask: 24 },
@@ -31,6 +32,15 @@ export const envVars = {
       STAGE: 'dev',
       NGW: 0,
       VPC_CIDR_BLOCK: '10.1.0.0/18',
+      TGW_ROUTE: ['0.0.0.0/0'],
+      SUBNET_CONFIG: [
+        { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_ISOLATED, cidrMask: 22 },
+      ],
+    },
+    {
+      STAGE: 'prod',
+      NGW: 0,
+      VPC_CIDR_BLOCK: '10.2.0.0/18',
       TGW_ROUTE: ['0.0.0.0/0'],
       SUBNET_CONFIG: [
         { name: 'pri', subnetType: ec2.SubnetType.PRIVATE_ISOLATED, cidrMask: 22 },

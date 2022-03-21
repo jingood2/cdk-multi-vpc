@@ -2,6 +2,7 @@ import { App, Stack, StackProps } from 'aws-cdk-lib';
 //import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { Construct } from 'constructs';
 import { envVars, validateEnvVariables } from './config';
+//import { EndpointStack } from './lib/endpoint-construct';
 import { TgwConstruct } from './lib/tgw-construct';
 import { VpcConstruct } from './lib/vpc-construct';
 import { VpnConstruct } from './lib/vpn-construct';
@@ -17,8 +18,6 @@ export class MyStack extends Stack {
     // 1. VPC
     envVars.VPC_ENV_INFO.forEach((vpc) => {
       new VpcConstruct(this, `${vpc.STAGE}-VPC`, {
-        //env: props.env,
-        //env: { account: '037729278610', region: 'ap-northeast-2' },
         customProps: {
           company: `${envVars.COMPANY_NAME}`,
           project: `${envVars.PROJECT_NAME}`,
@@ -114,6 +113,7 @@ export class MyStack extends Stack {
         onPremiseCidrBlock: envVars.ONPREMISE_CIDR_BOCK,
       }).addDependency(tgwStack);
     }
+
 
   }
 }
