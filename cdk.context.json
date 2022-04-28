@@ -1,3 +1,46 @@
 {
-  "ami:account=037729278610:filters.image-type.0=machine:filters.name.0=amzn-ami-vpc-nat-*:filters.state.0=available:owners.0=amazon:region=ap-northeast-2": "ami-0abd4c49376ea5dbb"
+  "ami:account=037729278610:filters.image-type.0=machine:filters.name.0=amzn-ami-vpc-nat-*:filters.state.0=available:owners.0=amazon:region=ap-northeast-2": "ami-0abd4c49376ea5dbb",
+  "vpc-provider:account=037729278610:filter.vpc-id=vpc-094850f179dd7c228:region=ap-northeast-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-094850f179dd7c228",
+    "vpcCidrBlock": "10.1.0.0/18",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Isolated",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0a29308b885e7e408",
+            "cidr": "100.26.0.0/22",
+            "availabilityZone": "ap-northeast-2a",
+            "routeTableId": "rtb-057c758a678676156"
+          },
+          {
+            "subnetId": "subnet-0789df3aac845bf53",
+            "cidr": "100.26.4.0/22",
+            "availabilityZone": "ap-northeast-2c",
+            "routeTableId": "rtb-00c1fb4f4f870a227"
+          }
+        ]
+      },
+      {
+        "name": "pri",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0ad566a877962e7f3",
+            "cidr": "10.1.0.0/22",
+            "availabilityZone": "ap-northeast-2a",
+            "routeTableId": "rtb-0d59aabd1b9418b62"
+          },
+          {
+            "subnetId": "subnet-050271fb53d0160f4",
+            "cidr": "10.1.4.0/22",
+            "availabilityZone": "ap-northeast-2c",
+            "routeTableId": "rtb-00f45c8f639f31970"
+          }
+        ]
+      }
+    ]
+  }
 }

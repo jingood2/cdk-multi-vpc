@@ -21,7 +21,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/072d985dbe7c88448fca3f4b2ef4dc255a54b7ab7cdde31f2ef20a4b918fbb18.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/3bd67e649f21017ab4b06f14bb66d839eaf9af63ecaf6bbd6017c5b6436968aa.json",
             ],
           ],
         },
@@ -54,7 +54,7 @@ Object {
           },
           Object {
             "Key": "cz-project",
-            "Value": "network",
+            "Value": "net",
           },
           Object {
             "Key": "cz-stage",
@@ -69,7 +69,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/58c544efc31e9bdf1741b98e3c01a20e0e1b376b28ff3d1adbbb4fe42b4da5a4.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/2706b3fa6a6f40c6d8fe00185682ec7970127871c38daae131eaf68295a740f0.json",
             ],
           ],
         },
@@ -102,7 +102,7 @@ Object {
           },
           Object {
             "Key": "cz-project",
-            "Value": "network",
+            "Value": "net",
           },
           Object {
             "Key": "cz-stage",
@@ -117,55 +117,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/6bc7db0f91ba7b10a3412c49ee6e91ceea2c08f0bef0b402899b69e76c606cac.json",
-            ],
-          ],
-        },
-      },
-      "Type": "AWS::CloudFormation::Stack",
-      "UpdateReplacePolicy": "Delete",
-    },
-    "prodVPCNestedStackprodVPCNestedStackResourceE39F00DE": Object {
-      "DeletionPolicy": "Delete",
-      "DependsOn": Array [
-        "TgwConstructNestedStackTgwConstructNestedStackResourceBDDD946A",
-      ],
-      "Properties": Object {
-        "Tags": Array [
-          Object {
-            "Key": "cz-ext1",
-            "Value": " ",
-          },
-          Object {
-            "Key": "cz-ext2",
-            "Value": " ",
-          },
-          Object {
-            "Key": "cz-ext3",
-            "Value": " ",
-          },
-          Object {
-            "Key": "cz-org",
-            "Value": "skcnc",
-          },
-          Object {
-            "Key": "cz-project",
-            "Value": "network",
-          },
-          Object {
-            "Key": "cz-stage",
-            "Value": "prod",
-          },
-        ],
-        "TemplateURL": Object {
-          "Fn::Join": Array [
-            "",
-            Array [
-              "https://s3.ap-northeast-2.",
-              Object {
-                "Ref": "AWS::URLSuffix",
-              },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/55f172eb0dad53412ece4cfcc7546639b15ecd4433e631c943875f61e028f84c.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/f1064089c09196db8fe0aa517678454f6f9736a7b9eb8e6dd3d985bd5680e05f.json",
             ],
           ],
         },
@@ -198,7 +150,7 @@ Object {
           },
           Object {
             "Key": "cz-project",
-            "Value": "network",
+            "Value": "net",
           },
           Object {
             "Key": "cz-stage",
@@ -213,7 +165,7 @@ Object {
               Object {
                 "Ref": "AWS::URLSuffix",
               },
-              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/d44a8c00a4e2c0c1bf9e51817c336d592e192fb5f2c79377f9f0efd37af0bf81.json",
+              "/cdk-hnb659fds-assets-037729278610-ap-northeast-2/8e4c41823f20a3fa58bc1ea0f1ea5c27521bfd37902737e8e1f89d86359d8673.json",
             ],
           ],
         },
